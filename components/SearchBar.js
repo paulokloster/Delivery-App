@@ -27,7 +27,7 @@ export default function SearchBar({ cityHandler }) {
             borderRadius: 50,
             flexDirection: "row",
             alignItems: "center",
-            marginRight: 5,
+            marginRight: 0,
           },
         }}
         renderLeftButton={() => (
