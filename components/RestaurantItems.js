@@ -48,20 +48,24 @@ export default function RestaurantItems(props) {
   );
 }
 
+//HOME SCREEN IMAGE COMPONENT  ---------
 const RestaurantImage = (props) => (
     <>
     <Image
       source={{
         uri: props.image,
       }}
-      style={{ width: "100%", height: 180}}
+      style={{ width: "100%", height: 180, borderRadius: 20}}
     />
+
+    {/* HEART ON THE TOP RIGHT OF THE IMAGE  */}
     <TouchableOpacity style={{ position: "absolute", right: 20, top: 20 }}>
         <MaterialCommunityIcons name="heart-outline" size={25} color="#fff" />
     </TouchableOpacity>
   </>
 );
 
+//  TEXT UNDER THE IMAGE
 const RestaurantInfo = (props) => (
 <View
     style={{
@@ -75,6 +79,9 @@ const RestaurantInfo = (props) => (
         <Text style={{ fontSize: 15, fontWeight: "bold" }}>{props.name}</Text>
         <Text style={{ fontSize: 13, color: "gray" }}>30-45 • min</Text>
     </View>
+    
+    
+
     {/* The style below is to make the circle around the rate number on the bottom right of the screen under the photo*/}
     <View style={{
         backgroundColor: "#eee",
