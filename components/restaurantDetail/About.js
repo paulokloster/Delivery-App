@@ -1,17 +1,33 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
+const yelpRestaurantInfo = {
+  name: "Brazilian Cuisine",
+  image: "https://c4.wallpaperflare.com/wallpaper/165/200/910/food-pizza-cheese-wallpaper-preview.jpg", 
+  price: "$$",
+  reviews: "1200",
+  rating: 4.5,
+  categories: [
+    { title: "Brazilian"}, 
+    { title: " Pizzas" },
+    { title: "Juice"} 
+  ],
+};
 
-const image = "https://c4.wallpaperflare.com/wallpaper/165/200/910/food-pizza-cheese-wallpaper-preview.jpg";
+const {name, image, price, reviews, rating, categories} = yelpRestaurantInfo;
 
-const title = "Kitchen Brazilian Cuisine";
-const description = "Brazilian Food • $$ • 🎫 • 4 ⭐ (3200+)";
+const formattedCategories = categories.map((cat) => cat.title).join(" • ");
+
+const description = `${formattedCategories} ${
+    price ? " • " + price : ""
+  } • 🎫 • ${rating} ⭐ (${reviews}+)`;
+
 
 export default function About() {
   return (
     <View>
       <RestaurantImage image={image} />
-      <RestaurantTitle title={title} />
+      <RestaurantTitle name={name} />
       <RestaurantDescription description={description} />
 
     </View>
