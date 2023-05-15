@@ -9,12 +9,13 @@ import MenuItems from "../components/restaurantDetail/MenuItems";
 
 
 
-export default function restaurantDetail() {
+export default function RestaurantDetail({ route, navigation }) {
   return (
     <View>
-      <About />
-      <Divider width={1.8} style={{ marginVertical: 20}} />
-      <MenuItems /> 
+      <About route={route} />
+      <Divider width={1.8} style={{ marginVertical: 20 }} />
+      {/* <MenuItems restaurantName={route.params.name} foods={foods} /> */}
+      <MenuItems restaurantName={route.params.name}/>
     </View>
   );
 } 
